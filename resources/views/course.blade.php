@@ -1,12 +1,14 @@
 @extends('back.layout')
 
 @section('content')
+
 <style>
     .uper {
         margin-top: 40px;
     }
 </style>
 <div class="uper container">
+
     @if(session()->get('success'))
     <div class="alert alert-success">
         {{ session()->get('success') }}
@@ -16,18 +18,18 @@
         <thead>
             <tr>
                 <td>ID</td>
-                <td>Category Name</td>
+                <td>Course Name</td>
                 <td colspan="2">Action</td>
             </tr>
         </thead>
         <tbody>
-            @foreach($categories as $category)
+            @foreach($courses as $course)
             <tr>
-                <td>{{$category->id}}</td>
-                <td>{{$category->name}}</td>
-                <td><a href="{{ route('category.edit', $category->id)}}" class="btn btn-primary">Edit</a></td>
+                <td>{{$course->id}}</td>
+                <td>{{$course->name}}</td>
+                <td><a href="{{ route('course.edit', $course->id)}}" class="btn btn-primary">Edit</a></td>
                 <td>
-                    <form action="{{ route('category.destroy', $category->id)}}" method="post">
+                    <form action="{{ route('course.destroy', $course->id)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit">Delete</button>
@@ -37,6 +39,7 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{ route('category.create')}}" class="btn btn-primary">Create Category</a>
+    <a href="{{ route('course.create')}}" class="btn btn-primary">Create Course</a>
     <div>
+
         @endsection

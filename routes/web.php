@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/admin', 'homeController@index');
 Route::resource('category', 'categoryController');
+Route::resource('course', 'courseController');
+// Route::get('courseindex', 'courseController@index');

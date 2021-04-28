@@ -1,4 +1,4 @@
-@extends('categorylayout')
+@extends('back.layout')
 
 @section('content')
 <style>

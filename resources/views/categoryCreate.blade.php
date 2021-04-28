@@ -1,5 +1,4 @@
-@extends('categorylayout')
-
+@extends('back.layout')
 @section('content')
 <style>
     .uper {
@@ -28,6 +27,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Add Category</button>
+            <a href="{{ route('category.index')}}" class="btn btn-primary">Back to Category List</a>
         </form>
     </div>
 </div>
